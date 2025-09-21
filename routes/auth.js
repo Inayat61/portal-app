@@ -77,7 +77,6 @@ router.post('/login', authLimiter, loginValidation, async (req, res) => {
 
     // Generate token
     const token = generateToken(user);
-    console.log('Generated Token:', token); // Debugging line
 
     // Log successful login
     await auditLogin(email, true, clientIP, userAgent, user.id);
