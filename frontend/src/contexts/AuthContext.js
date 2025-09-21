@@ -31,6 +31,7 @@ export const AuthProvider = ({ children }) => {
       } finally {
         setLoading(false);
       }
+    console.log('AuthProvider mounted');
     };
 
     initializeAuth();

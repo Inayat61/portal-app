@@ -101,21 +101,6 @@ services:
       retries: 3
       start_period: 60s
 
-  # Adminer (Database Management) - Optional
-  adminer:
-    image: adminer
-    container_name: portal_adminer
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - portal_network
-    environment:
-      ADMINER_DEFAULT_SERVER: db
-
 volumes:
   db_data:
     driver: local
