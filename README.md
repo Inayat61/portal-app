@@ -74,6 +74,7 @@ This portal implements a multi-user project management system with:
 - Docker Compose 2.0+
 - 4GB+ RAM available for Docker
 - Ports 3000, 3001, 3306, 8080 available
+- All Technology installed
 
 ## Quick Start
 
@@ -101,8 +102,8 @@ The script will:
 ### Option 2: Docker Compose
 
 ```bash
-# 1. Create environment file
-cp .env.example .env
+# 1. Make the env file
+.env
 
 # 2. Start all services
 docker-compose up -d
