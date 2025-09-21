@@ -349,23 +349,16 @@ router.get('/logs', [
       LEFT JOIN users u ON al.actor_user_id = u.id
       ${whereClause}
       ORDER BY al.ts DESC
-      LIMIT ? OFFSET ?
     `;
 
-    const queryParams = [...params, limit.toString(), offset.toString()];
+    const queryParams = [...params];
     const [logs] = await db.execute(logsQuery, queryParams);
-
-    // Parse JSON details
-    const parsedLogs = logs.map(log => ({
-      ...log,
-      details: log.details ? JSON.parse(log.details) : null
-    }));
 
     // Log admin view
     await auditAdminView(req, 'logs');
 
     res.json({
-      logs: parsedLogs,
+      logs: logs,
       pagination: {
         page,
         limit,
