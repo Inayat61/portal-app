@@ -81,14 +81,14 @@ This portal implements a multi-user project management system with:
 
 ```bash
 # 1. Clone the repository
-git clone <repository-url>
+git clone https://github.com/Inayat61/portal-app.git
 cd portal-app
 
 # 2. Make startup script executable
-chmod +x simple-start.sh
+chmod +x quick-start.sh
 
 # 3. Run the startup script
-./simple-start.sh
+./quick-start.sh
 ```
 
 The script will:
